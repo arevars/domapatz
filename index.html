@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>domapatz</title>
-        <script src="//code.createjs.com/createjs-2015.11.26.min.js"></script>
+        <title>EaselJS Example: Rollovers and Drag & Drop</title>
+
+        <link href="/lib/EaselJS/_assets/css/shared.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/EaselJS/_assets/css/examples.css" rel="stylesheet" type="text/css"/>
+        <script src="/lib/EaselJS/_assets/js/examples.js"></script>
+        <script src="/lib/EaselJS/lib/easeljs-NEXT.combined.js"></script>
+        <script src="/index.js"></script>
     </head>
-    <body>
-<script>
 
-            //Create a stage by getting a reference to the canvas
-            stage = new createjs.Stage("demoCanvas");
-            //Create a Shape DisplayObject.
-            circle = new createjs.Shape();
-            circle.graphics.beginFill("red").drawCircle(0, 0, 40);
-            //Set position of Shape instance.
-            circle.x = circle.y = 50;
-            //Add Shape instance to stage display list.
-            stage.addChild(circle);
-            //Update stage will render next frame
-            stage.update();
-
-        </script>
-
+    <body onload="init();">
+        <div>
+            <canvas id="testCanvas" width="960" height="400"></canvas>
+        </div>
     </body>
 </html>
