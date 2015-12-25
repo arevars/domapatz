@@ -14,9 +14,15 @@ var canvas, stage;
             stage.enableMouseOver(10);
             stage.mouseMoveOutside = true; // keep tracking the mouse even when it leaves the canvas
             // load the source image:
-            var image = new Image();
-            image.src = "/images/triangle.png";
-            image.onload = handleImageLoad;
+            var triangle1 = new Image();
+            triangle1.src = "/images/triangle.png";
+            triangle1.onload = handleImageLoad;
+
+            var triangle2 = new Image();
+            triangle2.src = triangle1.src;
+            triangle2.onload = handleImageLoad;
+
+
 	}
 	function stop() {
 		createjs.Ticker.removeEventListener("tick", tick);
@@ -35,8 +41,8 @@ var canvas, stage;
 //                bitmap.rotation = 360 * Math.random() | 0;
                 bitmap.regX = bitmap.image.width / 2 | 0;
                 bitmap.regY = bitmap.image.height / 2 | 0;
-                bitmap.scaleX = bitmap.scaleY = bitmap.scale = Math.random() * 0.4 + 0.6;
-                bitmap.name = "bmp_1";
+                bitmap.scaleX = bitmap.scaleY = bitmap.scale = 0.5;
+                bitmap.name = "bmp_2";
                 bitmap.cursor = "pointer";
 
                 // using "on" binds the listener to the scope of the currentTarget by default
@@ -53,7 +59,7 @@ var canvas, stage;
                         update = true;
                 });
                 bitmap.on("rollover", function (evt) {
-                        this.scaleX = this.scaleY = this.scale * 1.2;
+                        this.scaleX = this.scaleY = this.scale * 1.05;
                         update = true;
                 });
                 bitmap.on("rollout", function (evt) {
